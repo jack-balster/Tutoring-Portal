@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block title %} tutor Page {% endblock %}
+
+{% block content %}
+<h2>this is tutor page</h2>
+
+
+<a href="{% url 'Tutor:view_appointments' request.user.id %}">Appointments</a><br>
+<a href = "{% url 'Tutor:view_feedback' request.user.id %}">Feedback</a>
+{% endblock %}

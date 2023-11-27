@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-pynk1=lw%13-ekz_#l(o8pjhyxme=3l0&3tf#hs(bbjlf1jj4v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1:8000', 'localhost','127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -39,7 +39,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "Apps.TutorApp",
+    'Apps.Student',
+    'Apps.Admin',
+    'Apps.Tutor',
 ]
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com' # tutoring center email
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'trentondb0303@gmail.com' # need to update with tutoring center email
+EMAIL_HOST_PASSWORD = 'gulc wqvd vrer acez' # tutoring center email
+
+USE_TZ = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,12 +62,18 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
 ]
 
 ROOT_URLCONF = 'TutorProject.urls'
 
+LOGIN_REDIRECT_URL = 'home'
+AUTH_USER_MODEL = 'TutorApp.CustomUser'
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0,os.path.join(BASE_DIR,'Apps'))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -84,10 +104,14 @@ DATABASES = {
         'USER': 'TermProjectWSU',
         'PASSWORD': 'mywsu123@',
         'HOST': 'termproject.mysql.database.azure.com',
-        'PORT': '3306'
-        
-    }
+        'PORT': '3306',  # Added comma here
+
+        'TEST': {
+            'NAME': 'testdata',
+        },
+    },
 }
+
 
 
 # Password validation
@@ -125,16 +149,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = '/Static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'Static'),) 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),) 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media Files
-MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
-MEDIA_URL = '/Media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

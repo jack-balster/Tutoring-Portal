@@ -227,6 +227,11 @@ article h1 {
     box-sizing: border-box; /* This ensures padding doesn't add to the width */
 }
 
+article h2 {
+    margin-top: 0%;
+    font-size: 28px;
+}
+
 .usertable {
     text-align: left;
     width: 100%;
@@ -290,4 +295,1268 @@ th, td {
 .student-title {
     font-size: 22px;
     font-weight: bold;
+}
+
+
+/* tutorPage.html styles */
+.tutorPage-container {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.tutorPage-card {
+    background-color: rgb(248, 248, 248);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.2s ease;
+    border: 1px solid black;
+}
+
+.tutorPage-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tutorPage-card-body {
+    padding: 20px;
+}
+
+.tutorPage-card-title {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.tutorPage-card-text {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.tutorPage-btn {
+    color: white;
+    border-radius: 6px;
+    padding: 7px 14px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.tutorPage-btn-primary {
+    background-color: #ba1234;
+}
+
+.tutorPage-btn-primary:hover {
+    background-color: rgba(128,128,128);
+}
+
+
+
+/* tutor_appointments.html styles */
+.tutorAppointment-appointments-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tutorAppointment-appointment-card {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+.tutorAppointment-appointment-actions {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.tutorAppointment-btn {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px;
+    text-decoration: none; /* remove underline from links */
+}
+
+.tutorAppointment-btn-danger {
+    background-color: rgba(128,128,128);
+    color: white;
+}
+
+.tutorAppointment-btn-danger:hover {
+    background-color: rgba(85, 85, 85, 0.8);
+}
+
+.tutorAppointment-btn-success {
+    background-color: #ba1234;
+    color: white;
+}
+
+.tutorAppointment-btn-success:hover {
+    background-color: #a10d2a;
+}
+
+
+
+/* tutor_feedback.html styles */
+.tutorFeedback-feedback-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tutorFeedback-feedback-card {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tutorFeedback-rating {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+
+
+/* adminDashboard.html styles */
+.adminDashboard-container {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.adminDashboard-card {
+    background-color: rgb(248, 248, 248);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.2s ease; 
+    border: 1px solid black;
+    margin-bottom: 4px;
+    margin-top: 3px;
+}
+
+.adminDashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.adminDashboard-card-body {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-top: 5px;
+}
+
+.adminDashboard-card-title {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.adminDashboard-card-text {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.adminDashboard-btn {
+    color: white;
+    border-radius: 6px;
+    padding: 7px 14px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.adminDashboard-btn-primary {
+    background-color: #ba1234;
+    color: white;
+}
+
+.adminDashboard-btn-primary:hover {
+    background-color: rgba(128,128,128);
+}
+
+.adminDashboard-btn-danger {
+    background-color: #ba1234;
+}
+
+.adminDashboard-btn-danger:hover {
+    background-color: rgba(128,128,128);
+}
+
+
+
+/* createuser.html styles */
+.createUser-create-user-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.createUser-create-user-form {
+    width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.createUser-form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #ba1234;
+    outline: none;
+}
+
+.createUser-btn {
+    width: 50%; /* Full width button */
+    padding: 10px;
+    background-color: #ba1234;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.createUser-btn:hover {
+    background-color: rgba(128,128,128);
+}
+
+
+
+/* deleteUser.html styles */
+.deleteUser-delete-user-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.deleteUser-delete-user-form .form-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+.deleteUser-delete-user-form .input-group {
+    flex-grow: 1;
+}
+
+.deleteUser-delete-user-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.deleteUser-delete-user-form .form-control {
+    width: calc(100% - 80px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.delete-user-form .btn {
+    padding: 10px 20px;
+    background-color: #ba1234;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.deleteUser-delete-user-form .btn:hover {
+    background-color: rgba(128,128,128);
+}
+
+.deleteUser-delete-user-form,
+.user-list {
+    width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.form-group,
+.spacing {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 80%; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.form-control:focus {
+    border-color: #ba1234;
+    outline: none;
+}
+
+.btn {
+    width: auto;
+    padding: 10px;
+    background-color: #ba1234;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.filter-button {
+    margin-bottom: 2%;
+}
+
+.search-button {
+    margin-bottom: 1%;
+}
+
+.btn:hover {
+    background-color: rgba(128,128,128);
+}
+
+.delete-link {
+    color: #ba1234;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ba1234;
+    border-radius: 3px;
+    transition: background-color 0.1s, color 0.1s;
+}
+
+.delete-link:hover {
+    background-color: #ba1234;
+    color: white;
+}
+
+.deleteUser-delete-user-form,
+.user-list {
+    width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+ul.user-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 600px;
+}
+
+ul.user-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+}
+
+ul.user-list li:last-child {
+    border-bottom: none; 
+}
+
+
+
+/* generate_pdf.html styles */
+#pdf-preview {
+    height: 80vh; /* 80% of the viewport height */
+    margin-bottom: 20px;
+}
+
+#id_report {
+    cursor: pointer;
+}
+
+
+
+/* tutors.html styles */
+.tutorPage-container {
+    font-family: Arial, sans-serif;
+}
+
+.tutorPage-heading {
+    color: #333;
+}
+
+.tutorPage-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tutorPage-th, .tutorPage-td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tutorPage-th {
+    background-color: #f2f2f2;
+}
+
+.tutorPage-tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tutorPage-tr:hover {
+    background-color: #eaeaea;
+}
+
+.tutorPage-back-link {
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 12px;
+    background-color: #ba1234;
+    color: white;
+    transition: background-color 0.1s;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+}
+
+.tutorPage-back-link:hover {
+    background-color: rgba(128,128,128);
+}
+
+
+
+/* edit_tutor.html styles */
+.tutorForm-tutor-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.tutorForm-tutor-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.tutorForm-form-title {
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.tutorForm-tutor-form p {
+    margin-bottom: 5px;
+}
+
+.tutorForm-tutor-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.tutorForm-tutor-form input[type="text"],
+.tutorForm-tutor-form textarea,
+.tutorForm-tutor-form select {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.tutorForm-tutor-form textarea[name="description"] {
+    height: 60px;
+    width: 90%;
+}
+
+.tutorForm-tutor-form select {
+    width: 90%;
+    padding: 10px;
+}
+
+.tutorForm-tutor-form input[type="submit"] {
+    width: 50%; 
+    padding: 10px;
+    background-color: #ba1234;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+}
+
+.tutorForm-tutor-form input[type="submit"]:hover {
+    background-color: #a10d2a;
+}
+
+.tutorForm-back-btn {
+    width: 40%;
+    padding: 9px 14px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.tutorForm-back-btn:hover {
+    background-color: rgba(85, 85, 85, 0.8);
+}
+
+
+
+/* shifts.html styles */
+.tutorShifts-shifts-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tutorShifts-shifts-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tutorShifts-shift-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.tutorShifts-shift-info {
+    flex-grow: 1;
+}
+
+.tutorShifts-delete-link {
+    margin-left: 20px;
+    color: #ba1234;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ba1234;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.tutorShifts-delete-link:hover {
+    background-color: #ba1234;
+    color: white;
+}
+
+.tutorShifts-btn {
+    display: inline-block;
+    margin-top: 12px;
+    margin-right: 5px;
+    padding: 8px 12px;
+    background-color: #ba1234;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.tutorShifts-add-shift-btn {
+    background-color: #ba1234;
+}
+
+.tutorShifts-add-shift-btn:hover {
+    background-color: #a11030;
+}
+
+.tutorShifts-back-btn {
+    background-color: rgba(128,128,128);
+}
+
+.tutorShifts-back-btn:hover {
+    background-color: rgba(75, 75, 75, 0.8);
+}
+
+
+
+/* create_class.html styles */
+.adminCreateClass-btn {
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 6px;
+    padding: 6px 10px;
+    background-color: #ba1234;
+    color: white;
+    transition: background-color 0.1s;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+}
+
+.adminCreateClass-btn:hover {
+    background-color: rgba(128,128,128);
+}
+
+
+
+/* classes.html styles */
+.adminClasses-class-list {
+    list-style: none;
+    padding: 0;
+}
+
+.adminClasses-class-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.adminClasses-class-text {
+    flex-grow: 1; /* Ensures it takes up available space */
+}
+
+.adminClasses-btn {
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 10px;
+    background-color: #ba1234;
+    color: white;
+    transition: background-color 0.1s;
+    text-decoration: none;
+    border-radius: 3px;
+    border: none;
+}
+
+.adminClasses-btn:hover {
+    background-color: rgba(128,128,128);
+}
+
+.adminClasses-btn-danger {
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 6px;
+    margin-right: 10px;
+    padding: 6px 10px;
+    background-color: #ee3f51;
+    color: white;
+    border: none;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.adminClasses-btn-danger:hover {
+    background-color: rgba(128,128,128);
+}
+
+
+
+/* create_major.html styles */
+.createMajor-btn {
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 6px;
+    padding: 6px 10px;
+    background-color: #ba1234;
+    color: white;
+    transition: background-color 0.1s;
+    text-decoration: none;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+.createMajor-btn:hover {
+    background-color: rgba(128,128,128);
+}
+
+
+
+/* majors.html styles */
+.majors-major-list {
+    list-style: none;
+    padding: 0;
+}
+
+.majors-major-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.majors-major-text {
+    flex-grow: 1; /* Ensures it takes up available space */
+}
+
+.majors-btn {
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 6px;
+    padding: 6px 10px;
+    background-color: #ba1234;
+    color: white;
+    transition: background-color 0.1s;
+    text-decoration: none;
+    border-radius: 3px;
+    border: none;
+}
+
+.majors-btn:hover {
+    background-color: rgba(128,128,128);
+}
+
+.majors-btn-danger {
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 6px;
+    margin-right: 10px;
+    padding: 6px 10px;
+    background-color: #ee3f51;
+    color: white;
+    border: none;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.majors-btn-danger:hover {
+    background-color: #bd2130;
+}
+
+
+
+/* login.html styles */
+.loginPage-input:focus {
+    border-color: #ba1234;
+    outline: none;
+}
+
+.loginPage-login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.loginPage-login-form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.loginPage-form-group {
+    margin-bottom: 10px;
+}
+
+.loginPage-label {
+    display: block;
+    font-weight: bold;
+}
+
+.loginPage-input[type="text"],
+.loginPage-input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.loginPage-submit-button {
+    margin-top: 20px;
+    width: 50%;
+    padding: 10px;
+    background-color: #ba1234;
+    color: white;
+    transition: background-color 0.1s;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginPage-submit-button:hover {
+    background-color: rgba(128,128,128);
+}
+
+
+/* register.html styles */
+.registerPage-register-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.registerPage-register-form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.registerPage-form-group {
+    margin-bottom: 10px;
+}
+
+.registerPage-label {
+    display: block;
+    font-weight: bold;
+}
+
+.registerPage-input[type="text"],
+.registerPage-input[type="email"],
+.registerPage-input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.registerPage-input[type="text"]:focus,
+.registerPage-input[type="email"]:focus,
+.registerPage-input[type="password"]:focus {
+    border-color: #ba1234;
+    outline: none;
+}
+
+.registerPage-submit-button {
+    margin-top: 20px;
+    width: 50%;
+    padding: 10px;
+    background-color: #ba1234;
+    color: white;
+    transition: background-color 0.1s;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registerPage-submit-button:hover {
+    background-color: rgba(128,128,128);
+}
+
+
+
+/* password_reset.html styles */
+.passwordReset-password-reset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.passwordReset-password-reset-form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.passwordReset-form-group {
+    margin-bottom: 10px;
+}
+
+.passwordReset-label {
+    display: block;
+    font-weight: bold;
+}
+
+.passwordReset-input[type="text"],
+.passwordReset-input[type="password"],
+.passwordReset-input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.passwordReset-btn {
+    width: 50%;
+    padding: 10px;
+    background-color: #ba1234;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.passwordReset-btn:hover {
+    background-color: rgba(128,128,128);
+}
+
+
+
+/* password_reset_request.html styles */
+.passwordResetRequest-password-reset-request {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.passwordResetRequest-form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px; 
+}
+
+.passwordResetRequest-form-group {
+    margin-bottom: 10px;
+}
+
+.passwordResetRequest-label {
+    display: block;
+    font-weight: bold;
+}
+
+.passwordResetRequest-input[type="text"],
+.passwordResetRequest-input[type="email"],
+.passwordResetRequest-input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.passwordResetRequest-input:focus {
+    border-color: #ba1234;
+    outline: none;
+}
+
+.passwordResetRequest-btn {
+    width: 50%;
+    padding: 10px;
+    background-color: #ba1234;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.passwordResetRequest-btn:hover {
+    background-color: rgba(128,128,128);
+}
+
+.passwordResetRequest-messages {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    width: 400px;
+    padding: 1px;
+    border-radius: 5px;
+}
+
+
+
+/* studentPage.html styles */
+.student-pointer {
+    cursor: pointer;
+}
+
+.student-tutor-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.student-tutor-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 100%; 
+    box-sizing: border-box;
+    display: flex; /* Display tutor-card as a flex container */
+}
+
+.student-tutor-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.student-tutor-info {
+    flex: 1; /* Expand to fill available space */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.student-tutor-info img {
+    float: left;
+    max-width: 130px;
+    height: 130px;
+    object-fit: cover;
+    padding-top: 5px;
+    border-radius: 50%; /* Make the image circular */
+}
+
+.student-tutor-details {
+    flex: 2; /* Expand to fill available space */
+    padding: 10px;
+    text-align: left;
+}
+
+.student-tutor-buttons {
+    flex: 1; /* Expand to fill available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+}
+
+.student-action-button {
+    padding: 10px 0; /* Adjust the top and bottom padding */
+    width: 150px; /* Fixed width for both buttons */
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.student-appointment-button {
+    padding: 10px 0; /* Adjust the top and bottom padding */
+    margin-left: 0;
+    margin-bottom: 25px;
+    width: 150px; 
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.student-rate-button {
+    background-color: #A60F2D;
+    color: white;
+}
+
+.student-appointment-button:hover {
+    background-color: var(--crimson);
+    color: white;
+}
+
+.student-search-button {
+    background-color: #ba1234;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 3px; 
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 10px;
+}
+    
+.student-search-button:hover {
+    background-color: rgba(128,128,128);
+}
+
+article label {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.student-page input {
+    width: 40%;
+}
+
+.student-page select {
+    width: 41.5%;
+}
+
+
+/* book_appointment.html styles */
+.student-form-container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.student-form-group {
+    margin-bottom: 20px;
+}
+
+.student-btn {
+    background-color: #ba1234;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 30%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.student-btn:hover {
+    background-color: #a11030;
+}
+
+.student-form-container input[type="text"],
+.student-form-container textarea,
+.student-form-container select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.student-form-container input[type="submit"] {
+    margin-top: 20px;
+}
+
+
+/* student_appointments.html */
+.schedule-action-button {
+    padding: 10px 0; /* Adjust the top and bottom padding */
+    width: 150px; /* Fixed width for both buttons */
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* rateTutor.html styles */
+.rate-tutor-btn {
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 6px;
+    padding: 6px 10px;
+    background-color: #ba1234;
+    color: white;
+    transition: background-color 0.1s;
+    text-decoration: none;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+    
+.rate-tutor-btn:hover {
+    background-color: rgba(128,128,128);
 }

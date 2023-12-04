@@ -1,9 +1,32 @@
-{% extends "base.html" %} {% block title %} tutor Page {% endblock %}
+{% extends "base.html" %}
+
+{% block title %}Tutor Dashboard{% endblock %}
 
 {% block content %}
-<h2>this is tutor page</h2>
+<div class="tutorPage-container mt-4">
+    <h1 class="display-4">Tutor Dashboard</h1>
+    <div class="row">
+        <!-- Appointments Card -->
+        <div class="col-md-6 mb-4">
+            <div class="tutorPage-card h-100">
+                <div class="tutorPage-card-body">
+                    <h3 class="tutorPage-card-title">Appointments</h3>
+                    <p class="tutorPage-card-text">View and manage your appointments.</p>
+                    <a href="{% url 'Tutor:view_appointments' request.user.id %}" class="tutorPage-btn tutorPage-btn-primary">View Appointments</a>
+                </div>
+            </div>
+        </div>
+        <!-- Feedback Card -->
+        <div class="col-md-6 mb-4">
+            <div class="tutorPage-card h-100">
+                <div class="tutorPage-card-body">
+                    <h3 class="tutorPage-card-title">Feedback</h3>
+                    <p class="tutorPage-card-text">Read feedback from students.</p>
+                    <a href="{% url 'Tutor:view_feedback' request.user.id %}" class="tutorPage-btn tutorPage-btn-primary">View Feedback</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-<a href="{% url 'Tutor:view_appointments' request.user.id %}">Appointments</a><br>
-<a href = "{% url 'Tutor:view_feedback' request.user.id %}">Feedback</a>
 {% endblock %}

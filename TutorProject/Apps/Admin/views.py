@@ -153,6 +153,10 @@ def generate_pdf_data(report_type):
         return report2().getvalue()
     elif report_type == 'report3':
         return report3().getvalue()
+    elif report_type == 'report4':
+        return report4().getvalue()
+    elif report_type == 'report5':
+        return report4().getvalue()
     else:
         return None
     
@@ -160,7 +164,7 @@ def generate_pdf_data(report_type):
 def pdf_preview(request):
     report_type = request.GET.get('report_type')
 
-    if report_type not in ['report1', 'report2', 'report3']:
+    if report_type not in ['report1', 'report2', 'report3', 'report4', 'report5']:
         return HttpResponse("Invalid report type", status=400)
 
     if report_type == 'report1':
@@ -169,6 +173,10 @@ def pdf_preview(request):
         pdf_data = report2().getvalue()
     elif report_type == 'report3':
         pdf_data = report3().getvalue()
+    elif report_type == 'report4':
+        pdf_data = report4().getvalue()
+    elif report_type == 'report5':
+        pdf_data = report5().getvalue()
     else:
         return HttpResponse("Invalid report type", status=400)
 
@@ -186,21 +194,29 @@ def admin_view_tutors(request):
 @login_required
 def admin_edit_tutor_profile(request, tutor_id):
     tutor = get_object_or_404(Tutor, user_id=tutor_id)
-
+    print(tutor) # delete after debug
     if request.method == 'POST':
+        print(tutor) # delete after debug
         form = EditTutorForm(request.POST, instance=tutor)
         if form.is_valid():
+            print(tutor) # delete after debug
             form.save()  
             if 'picture' in request.FILES:
                 tutor.picture = request.FILES['picture']
                 tutor.save()
             selected_major = form.cleaned_data.get('major')
             tutor.major = selected_major
-            tutor.save()
+            # update name
+            new_first_name = form.cleaned_data.get('first_name') # Grab new first name
+            tutor.user.first_name = new_first_name # update tutor first name
+            new_last_name = form.cleaned_data.get('last_name') # Grab new last name
+            tutor.user.last_name = new_last_name # update tutor last name
+            tutor.user.save() # Save info
 
             selected_classes = form.cleaned_data.get('tutored_classes')
             for a_class in selected_classes:
                 a_class.available_tutors.add(tutor)
+    
     else:
         associated_classes = tutor.tutored_classes.all()
         form = EditTutorForm(instance=tutor, initial={'tutored_classes': associated_classes})
@@ -287,7 +303,7 @@ def report3():
     total_returning_students_count = Student.objects.filter(times_visited__gt=1).count()
     total_students_count = Student.objects.count()
     percentage = total_returning_students_count / total_students_count
-    data = [["Percentage of Returning Students", f"{percentage:.2f}%"], ["Returning Students"]]
+    data = [["Percentage of Returning Students", f"{percentage:.2f}%"], ["Returning Students - Number of Visits"]]
 
     for student in total_returning_students:
         data.append([f"{student.user.first_name} {student.user.last_name} - {student.times_visited}" ])
@@ -309,10 +325,82 @@ def report3():
     buffer.seek(0)
     return buffer 
 
+def report4():
+    buffer = BytesIO()
+    pdf = SimpleDocTemplate(buffer, pagesize=letter)
+    data = [["Times Tutoring Center Most Visited"]]
+
+    times = TimeSlot.objects.order_by('-frequency')
+    for time_slot in times:
+        data.append([f"{time_slot.start_time} - {time_slot.frequency}"])
+    
+
+    table = Table(data)
+    style = [
+        ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.beige)
+    ]
+
+    table.setStyle(style)
+    elements = [table]
+    pdf.build(elements)
+
+    buffer.seek(0)
+    return buffer 
 
 
+def report5():
+    from collections import defaultdict
+    buffer = BytesIO()
+    pdf = SimpleDocTemplate(buffer, pagesize=letter)
+    data = [["Active Tutoring Hours By Tutor"]]
 
+    tutor_frequency_pairs = TutorFrequencyPair.objects.order_by('-frequency')
 
+    tutor_time_slots = defaultdict(list)
+
+    for pair in tutor_frequency_pairs:
+        tutor_name = pair.tutor.user.first_name 
+        time_slot = pair.time_period.start_time
+        frequency = pair.frequency
+
+        # Store time slots for each tutor
+        tutor_time_slots[tutor_name].append((time_slot, frequency))
+
+    # Reformat the data to display each tutor's most frequent time slots
+    
+
+    for tutor, time_slots in tutor_time_slots.items():
+        # Sort the time slots by frequency in descending order
+        sorted_time_slots = sorted(time_slots, key=lambda x: x[1], reverse=True)
+
+        # Add tutor's name as a header
+        data.append([f"Tutor: {tutor}"])
+        
+        # Add sorted time slots for this tutor
+        for time_slot, frequency in sorted_time_slots:
+            data.append([f"Hour: {time_slot}", f"Time Tutored: {frequency}"])
+
+    table = Table(data)
+    style = [
+        ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.beige)
+    ]
+
+    table.setStyle(style)
+    elements = [table]
+    pdf.build(elements)
+
+    buffer.seek(0)
+    return buffer 
 
 @login_required
 def classes_menu(request):
@@ -363,6 +451,8 @@ def admin_view_tutor_shifts(request, tutor_id):
    shifts = Shift.objects.filter(tutor=tutor)
    form = ShiftForm()
    return render(request, 'shifts.html', {'tutor': tutor, 'shifts': shifts, 'form': form})
+from Apps.TutorApp.tasks import my_scheduled_task
+
 @login_required
 def admin_add_tutor_shift(request, tutor_id):
     tutor = get_object_or_404(Tutor, user_id=tutor_id) #get tutor info

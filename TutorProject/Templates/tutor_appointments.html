@@ -1,17 +1,24 @@
 {% extends "base.html" %}
-{% block title %} Admin Page {% endblock %}
+{% block title %} Tutor Appointments {% endblock %}
 
 {% block content %}
 
-    {{tutor}}'s Appointments<br><br>
+<div class="tutorAppointment-appointments-container">
+    <h2>{{ tutor }}'s Appointments</h2>
     {% for appointment in appointments %}
-        {% if appointment.student is not None %}
-            Appointment with {{ appointment.student }} from {{appointment.start_time}} to {{appointment.end_time}}, Class: {{ appointment.tutored_class }}, Notes: {{ appointment.description }}
-            <a href="{% url 'Tutor:cancel_appointment' appointment.id %}">Cancel</a><br>
-            <a href="{% url 'Tutor:appointment_completed' appointment.id %}">Click Here When Appointment Ends</a><br>
-        {% endif %}
+    {% if appointment.student is not None %}
+        <div class="tutorAppointment-appointment-card">
+            <p>Appointment with <strong>{{ appointment.student }}</strong> from <strong>{{ appointment.start_time }}</strong> to <strong>{{ appointment.end_time }}</strong><br>
+            Class: <strong>{{ appointment.tutored_class }}</strong><br>
+            Notes: <strong>{{ appointment.description }}</strong></p>
+            <div class="tutorAppointment-appointment-actions">
+                <a href="{% url 'Tutor:cancel_appointment' appointment.id %}" class="tutorAppointment-btn tutorAppointment-btn-danger">Cancel</a>
+                <a href="{% url 'Tutor:appointment_completed' appointment.id %}" class="tutorAppointment-btn tutorAppointment-btn-success">Complete Appointment</a>
+            </div>
+        </div>
+    {% endif %}
     {% endfor %}
-    
+</div>
 
 
 {% endblock %}

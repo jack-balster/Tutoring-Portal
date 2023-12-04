@@ -6,8 +6,6 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.core.validators import MaxValueValidator, MinValueValidator
 from datetime import datetime, timedelta
-from django.db.models import Q
-import uuid
 import random
 import string
 
@@ -208,3 +206,22 @@ class TutoringSession(models.Model):
 
     def __str__(self):
         return f"Appointment with {self.tutor} from {self.start_time.strftime('%I:%M %p')} to {self.end_time.strftime('%I:%M %p')}"
+    
+class TimeSlot(models.Model):
+    start_time = models.TimeField()
+    frequency = models.IntegerField(default = 0)
+
+class TutoringTimePeriod(models.Model):
+    start_time = models.TimeField()
+    tutors = models.ManyToManyField(Tutor, through='TutorFrequencyPair', related_name='time_periods')
+
+    def __str__(self):
+        return f"{self.start_time}"
+
+class TutorFrequencyPair(models.Model):
+    frequency = models.IntegerField(default=0)
+    tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE)
+    time_period = models.ForeignKey(TutoringTimePeriod, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.time_period.start_time}"

@@ -13,7 +13,7 @@ Run app by navigating to the TutorProject directory and running the command "pyt
 Run tests by navigating to the TutorProject directory and running the command "python3 manage.py test TutorApp"
 
 
-(Note that the below pages are not ALL the pages or functionality. They are just shown to provide examples of what the app looks like. Please view the demo video to see the entire app and its functionality.)
+(Note that the pages below are not ALL the pages or functionality. They are just shown to provide examples of what the app looks like. Please view the demo video to see the entire app and its functionality.)
 # Login Page
 ![image](https://github.com/jack-balster/Tutor-App/assets/107078414/9135945c-7245-4cd6-9445-c827238d8953)
 # Student Page

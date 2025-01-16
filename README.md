@@ -1,4 +1,4 @@
-# Tutoring App 
+# WSU Tutoring App 
 ## Team Members 
 * Jack Balster
 * Trenton Bergdahl

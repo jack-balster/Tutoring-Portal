@@ -1,7 +1,5 @@
-# CptS 322 Term Project
-### Project Title: Tutoring App 
-### Team Name:  Team Tylenol
-### Team Members 
+# Tutoring App 
+## Team Members 
 * Jack Balster
 * Trenton Bergdahl
 * Cameron Caen
@@ -16,13 +14,13 @@ Run the tests by navigating to the TutorProject directory and running the comman
 
 
 ### (Note that the pages below are not ALL the pages or functionality. They are just shown to provide examples of what the app looks like. Please view the demo video to see the entire app and its functionality/use cases.)
-# Login Page
+## Login Page
 ![image](https://github.com/jack-balster/Tutor-App/assets/107078414/9135945c-7245-4cd6-9445-c827238d8953)
-# Student Page
+## Student Page
 ![image](https://github.com/jack-balster/Tutor-App/assets/107078414/3fb18bb2-e5c8-4dfc-a2d7-297560c1f980)
-# Tutor Page
+## Tutor Page
 ![image](https://github.com/jack-balster/Tutor-App/assets/107078414/783776f9-02f1-490a-b14d-16a4488cb2af)
-# Admin Pages
+## Admin Pages
 ![image](https://github.com/jack-balster/Tutor-App/assets/107078414/17215a3c-8cd9-42be-b56a-9183c1736e3d)
 ![image](https://github.com/jack-balster/Tutor-App/assets/107078414/cd7f56bb-f344-4319-990d-8d3ef08ffffa)
 ![image](https://github.com/jack-balster/Tutor-App/assets/107078414/2d40161e-ab5a-4606-a5e5-842c55b30f13)
